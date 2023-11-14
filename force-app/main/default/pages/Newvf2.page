@@ -1,0 +1,18 @@
+<apex:page controller="Newemployee">
+    <apex:form >
+        <apex:pageBlock title="Employee Details">
+            <apex:pageBlockTable value="{!employees}" var="emp">
+                <apex:column value="{!emp.Name}" />
+                <apex:column value="{!emp.salary__c}" />
+                <apex:column value="{!emp.contact_number__c}" />
+                <apex:column value="{!emp.Department__c}" />
+                <apex:column >
+                    <apex:commandLink value="Edit" action="{!editEmployee}" rerender="employeeForm">
+                        <apex:param name="employeeId" value="{!emp.Id}" assignTo="{!selectedEmployeeId}" />
+                    </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton value="Add Employee" action="{!navigateToNewemployee1}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

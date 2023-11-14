@@ -1,0 +1,13 @@
+<apex:page docType="html" >
+    <html>
+        <body>
+            <p id = "demos"> </p>
+           <script>
+            let s = "apple,banana,orange";
+            let b = "mango";
+            let t = s.concat(" ",b);
+            document.getElementById("demos").innerHTML=t;
+            </script>
+        </body>
+    </html>
+</apex:page>

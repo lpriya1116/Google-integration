@@ -1,0 +1,17 @@
+<aura:component controller ="Empcrudoperation">
+<aura:attribute name="employees" type="List" />
+    <aura:attribute name="newEmployee" type="Employee__c" />
+        <aura:handler name="init" value="{!this}" action="{!c.loadEmployees}" />
+
+        <aura:iteration items="{!v.employees}" var="employee">
+                Name: {!employee.Name},
+            Salary: {!employee.Salary__c}
+       </aura:iteration>
+
+    <div>
+        <lightning:input label="Name" value="{!v.newEmployee.Name}" />
+        <lightning:input label="Salary" value="{!v.newEmployee.salary__c}" type="number"/>
+        <lightning:button label="Create" onclick="{!c.createEmployee}" />
+
+    </div>
+</aura:component>

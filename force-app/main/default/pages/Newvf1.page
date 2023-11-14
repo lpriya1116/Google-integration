@@ -1,0 +1,36 @@
+<apex:page showheader="False" standardcontroller="Employee__c"> 
+   <apex:form >
+      <table border="3">
+            <tr>
+                <td>Employee name</td>
+                <td>
+                    <apex:inputfield value="{!Employee__c.name}"/>
+                </td>
+                <td>Employee ID</td>
+               <td>
+                    <apex:inputfield value="{!Employee__c.Employee_ID__c}"/>
+                </td>
+                <td>Employee Salary</td>
+               <td>
+                    <apex:inputfield value="{!Employee__c.salary__c}"/>
+                </td>
+                <td>Employee Tax</td>
+                <td>
+                    <apex:inputfield value="{!Employee__c.Tax__c}"/>
+                </td>
+                <td>Employee Contact number</td>
+                <td>
+                    <apex:inputfield value="{!Employee__c.contact_number__c}"/>
+                </td>
+            </tr>
+              <tr>
+                <td>
+                    <apex:commandbutton value="save" action="{!save}"/>
+                </td>
+                <td>
+                    <apex:commandbutton value="cancel" action="{!cancel}"/>
+                </td>
+            </tr>
+       </table>
+       </apex:form>
+</apex:page>

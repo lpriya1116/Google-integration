@@ -1,0 +1,100 @@
+<apex:page docType="html">
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+   h1 {
+            font-size: 36px; 
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .calculator {
+            width: 400px;
+            padding: 70px;
+            background-color: #f0f0f0;
+            font-size: 20px;
+            margin: 0 auto;
+           margin-bottom: 200px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .buttons button {
+            width: 78px;
+            height: 48px;
+            margin: 5px;
+            font-size: 18px;
+            color: #ff6347;
+        }
+
+        .result {
+            width: 400px%;
+            padding: 10px;
+            font-size: 50px;
+            margin-top: 10px;
+                     
+
+        }
+    </style>
+</head>
+<body>
+<div class="calculator" >
+    <h1>Calculator</h1>
+    <input type="number" id="input1" class="input-field" placeholder="Enter number 1" />
+    <input type="number" id="input2" class="input-field" placeholder="Enter number 2" />
+
+    <div class="buttons">
+        <button onclick="performOperation('add')">Add</button>
+        <button onclick="performOperation('sub')">Subtract</button>
+        <button onclick="performOperation('mul')">Multiply</button>
+        <button onclick="performOperation('div')">Divide</button>
+    </div>
+   <output type="number" id="result" class="result"></output>
+
+</div>
+
+<script>
+    function performOperation(operation) {
+        var num1 = parseFloat(document.getElementById("input1").value);
+        var num2 = parseFloat(document.getElementById("input2").value);
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("result").innerText = "Please enter valid numbers.";
+            return;
+        }
+        
+
+   var result;
+  switch (operation) {
+     case 'add':
+     result = num1 + num2;
+     break;
+    case 'sub':
+    result = num1 - num2;
+    break;
+   case 'mul':
+   result = num1 * num2;
+   break;
+   case 'div':
+   if (num2 === 0) {
+   document.getElementById("result").innerHTML= "Cannot divide by zero.";
+   return;
+  }
+  result = num1 / num2;
+  break;
+ }
+
+        document.getElementById("result").innerHTML = "\nResult: " + result;
+    }
+</script>
+</body>
+</html>
+</apex:page>

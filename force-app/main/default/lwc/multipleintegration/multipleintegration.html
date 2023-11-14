@@ -1,0 +1,31 @@
+<template>
+    <lightning-button label="Send to Google Sheets" onclick={handleSendToGoogleSheets}></lightning-button>
+
+    <lightning-combobox
+        name="SelectObject"
+        label="Select Object"
+        value={selectedObject}
+        placeholder="Select Object"
+        options={objectOptions}
+        onchange={handleObjectChange}>
+    </lightning-combobox>
+
+    <div class="field-options">
+        <template for:each={fieldOptions} for:item="field">
+            <div key={field.value} class="field-option">
+                <lightning-input type="checkbox" label={field.label} value={field.value} onchange={handleFieldChange}></lightning-input>
+            </div>
+        </template>
+    </div>
+
+    <p>Selected Object is: {selectedObject}</p>
+    <p>Selected Fields are:</p>
+    <ul>
+        <template for:each={selectedFields} for:item="field">
+            <li key={field}>{field}</li>
+        </template>
+    </ul>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+</template>

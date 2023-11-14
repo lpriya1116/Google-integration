@@ -1,0 +1,20 @@
+<apex:page docType="html" >
+    <html>
+    <body>
+       <h1>forloop</h1>
+
+      <p id ="loopid"></p>
+
+           
+            
+  <script>
+    let num ="";
+    for (let i = 0; i < 10; i++) {
+     num += "The number is   " + i + "<br>";
+       }
+    document.getElementById("loopid").innerHTML = num;
+           
+           </script>
+        </body>
+    </html>
+</apex:page>

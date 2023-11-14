@@ -1,0 +1,20 @@
+<apex:page showheader="False" standardcontroller="Employee__c"> 
+    <apex:form >
+        <table border="1">
+            <tr>
+                <td>Employee name</td>
+                <td>
+                    <apex:inputfield value="{!Employee__c.name}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <apex:commandbutton value="save" action="{!save}"/>
+                </td>
+                <td>
+                    <apex:commandbutton value="cancel" action="{!cancel}"/>
+                </td>
+            </tr>
+        </table>
+    </apex:form>
+</apex:page>

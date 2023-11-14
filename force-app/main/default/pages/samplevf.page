@@ -1,0 +1,44 @@
+<apex:page docType="html">
+<html>
+    <head>
+    <style>
+        #result{
+             width: 400px%;
+            padding: 10px;
+            font-size: 20px;
+            margin-top: 10px;
+                     }
+        
+    </style>
+</head>
+<body>
+<h1>Calculate</h1>
+    <input type="number" id="input1"/>
+    <input type="number" id="input2"/>
+    <button type="button" onclick="arithmeticOperation('add')" style="color:red;">Add</button>
+    <button type="button" onclick="arithmeticOperation('sub')" style="color:blue;">Subtract</button>
+    <button type="button" onclick="arithmeticOperation('multiply')" style="color:green;">Multiply</button>
+    <div id="result"></div>
+<script>
+    function arithmeticOperation(operation){
+        var num1 = parseFloat(document.getElementById("input1").value);
+        var num2 = parseFloat(document.getElementById("input2").value);
+      
+        var result;
+        switch(operation){
+        case 'add':
+        result = num1 + num2;
+        break;
+            case 'sub':
+                result = num1 - num2;
+                break;
+            case 'multiply':
+                result = num1 * num2;
+                break;
+        }
+        document.getElementById("result").textContent = "Result: " + result; // Use textContent to display the result
+    }
+</script>
+</body>
+</html>
+</apex:page>

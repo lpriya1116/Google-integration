@@ -1,0 +1,7 @@
+<template>
+<lightning-carousel>
+<template for:each={attachments.data} for:item="attachment">
+<lightning-carousel-image key={attachment.Id} src={attachment.Body} alternative-text={attachment.Name}></lightning-carousel-image>
+</template>
+</lightning-carousel>
+</template>

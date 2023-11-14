@@ -1,0 +1,16 @@
+<apex:page controller="Employeemap">
+    <apex:pageBlock title="Department-wise Employee Information">
+        <apex:repeat value="{!departmentEmployeeMap}" var="deptId">
+            <apex:pageBlockSection title="Department ID: {!deptId}">
+                <apex:pageBlockTable value="{!departmentEmployeeMap[deptId]}" var="emp">
+                    <apex:column headerValue="Employee ID">
+                        <apex:outputText value="{!emp.Id}" />
+                    </apex:column>
+                    <apex:column headerValue="Employee Name">
+                        <apex:outputText value="{!emp.Name}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page standardController="Department__c" extensions="EmployeeController" sidebar="false"> 
+
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputText value="{!selectedEmployee.Name}" label="Name" />
+                <apex:inputText value="{!selectedEmployee.Department__c}" label="Department" />
+                <apex:inputText value="{!selectedEmployee.contact_number__c}" label="ContactNo" />
+                <apex:inputText value="{!selectedEmployee.salary__c}" label="Salary" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveEmployee}" />
+                <apex:commandButton value="Cancel" action="{!cancelEdit}" immediate="true" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

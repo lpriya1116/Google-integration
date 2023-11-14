@@ -1,0 +1,15 @@
+<apex:page standardController="Employee__c" extensions="Newemployee" readOnly="false">
+    <apex:form >
+        <apex:pageBlock title="Edit Employee">
+            <apex:pageBlockSection >
+                <apex:inputText value="{!selectedEmployeeName}" required="true" />
+                <apex:inputField value="{!emp.salary__c}" required="true" />
+                <apex:inputField value="{!emp.contact_number__c}" required="true" />
+                <apex:inputField value="{!emp.Department__c}" required="true" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveEmployee}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

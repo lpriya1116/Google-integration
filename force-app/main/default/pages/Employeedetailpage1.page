@@ -1,0 +1,16 @@
+<apex:page standardcontroller="Employee__c" extensions="Displayemployees">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:outputText value="Employee Name: {!Employee__c.Name}"/>
+                <apex:outputText value="Salary: {!Employee__c.salary__c}"/>
+                <apex:outputText value="Contact No: {!Employee__c.contact_number__c}"/>
+                <apex:outputText value="Department: {!Employee__c.Department__c}"/>
+
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!URLFOR('/apex/EmployeelistPage1')}" value="Back"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

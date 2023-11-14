@@ -1,0 +1,11 @@
+<apex:page controller="Gettermethod">
+    <apex:form >
+        <apex:Sectionheader title="Account details"/>
+       <apex:pageblock >
+           
+           <apex:outputText >
+           </apex:outputText>
+        </apex:pageblock>
+    </apex:form>
+    
+</apex:page>

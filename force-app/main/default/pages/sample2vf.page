@@ -1,0 +1,26 @@
+<apex:page docType="html" >
+    <html>
+        <head>
+            <style>
+                body{
+                color:blue;
+                text-align:center;
+                font-family: "Times New Roman", Times, serif;
+                font-size: 40px;
+                }
+                h1{
+                color:red;
+                text-align:center;
+               font-family: "Times New Roman", Times, serif;
+                                font-size: 40px;
+
+                }
+                
+        </style>
+        </head>
+        <body>
+            <h1>hello java </h1>
+            <p> this is javascript</p>
+        </body>
+        </html>
+        </apex:page>

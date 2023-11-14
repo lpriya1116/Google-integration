@@ -1,0 +1,8 @@
+<apex:component controller="EmployeeDetlsList">
+    <apex:attribute name="var" type="String" description="The list of Employees."/>
+    <apex:repeat var="componentEmployee__c" value="{!employees}">
+        <apex:componentBody >
+            <apex:variable var="{!var}" value="{!componentEmployee__c}"/>     
+        </apex:componentBody>
+    </apex:repeat>
+</apex:component>

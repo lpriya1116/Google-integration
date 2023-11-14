@@ -1,0 +1,62 @@
+<apex:page docType="html" >
+    <html>
+<style>
+
+input[type=text]  {
+ 
+    font-size: 16px;
+
+  width: 100%;
+  padding: 9px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 9px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+}
+
+
+
+div {
+  border-radius: 1px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+</style>
+<body>
+ <p style="text-align:center; font-size:20px;">HTML FORM</p>
+
+<div>
+
+    <label for="fname" style = "font-size:16px;">First Name</label>
+ <input type="text" id="fname" name="firstname"/>
+
+    <label for="lname" style = "font-size:16px;">Last Name</label>
+ <input type="text" id="lname" name="lastname"/>
+
+ <label for="country" style = "font-size:16px;">Country</label>
+ <select id="country" name="country">
+ <option value="australia" style = "font-size:16px;">Australia</option>
+ <option value="canada" style = "font-size:16px;">Canada</option>
+ <option value="usa" style = "font-size:16px;">USA</option>
+    </select>
+  
+ <input type="submit" value="Submit"/>
+    
+    </div>
+
+
+</body>
+
+</html>
+</apex:page>

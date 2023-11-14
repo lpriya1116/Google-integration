@@ -1,0 +1,11 @@
+<apex:page controller="Gettermethod">
+    <apex:form >
+        <apex:outputLabel > Enter name </apex:outputLabel>
+        <apex:inputText value="{!name}"/>
+        <apex:commandButton value="click" reRender="one"/>
+        <div>
+         <apex:outputLabel id="one"> Hello your name is {!name}
+        </apex:outputLabel> 
+        </div>
+    </apex:form>
+</apex:page>

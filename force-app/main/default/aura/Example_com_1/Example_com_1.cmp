@@ -1,0 +1,13 @@
+<aura:component >
+    <h1>Employee list</h1> <br/>
+    <p>Employee details</p><br/>
+    <table>
+        <tr>
+            <th>name</th>
+        </tr>
+        <tr><th>priya</th></tr>
+    </table>
+    
+    
+    
+</aura:component>

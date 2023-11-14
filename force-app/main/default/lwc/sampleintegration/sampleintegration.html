@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Object and Field Selector">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                label="Select Object"
+                value={selectedObject}
+                options={objectOptions}
+                onchange={handleObjectChange}
+            ></lightning-combobox>
+
+            <lightning-combobox
+                label="Select Field(s)"
+                value={selectedFields}
+                options={fieldOptions}
+                multiple
+                onchange={handleFieldChange}
+            ></lightning-combobox>
+
+            <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

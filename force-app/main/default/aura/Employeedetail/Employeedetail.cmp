@@ -1,0 +1,3 @@
+<aura:component >
+    <p>my first aura lightning component</p>
+</aura:component>

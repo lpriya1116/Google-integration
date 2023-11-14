@@ -1,0 +1,7 @@
+<apex:component >
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+this is a new component for testing
+This is your new Component
+<!-- End Default Content REMOVE THIS -->
+</apex:component>

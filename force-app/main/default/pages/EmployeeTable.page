@@ -1,0 +1,40 @@
+<apex:page standardController="Department__c" extensions="Newvf" sidebar="false">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <apex:form >
+        <apex:pageBlock title="Department" id="pb">
+            <apex:pageMessages />
+            <apex:variable var="rowNumber" value="{!0}"/>
+            <apex:pageBlockTable id="thetable" title="Employees" var="emp" value="{!EmployeeList}">
+                <apex:column headerValue="No." style="width:20px; text-align:center;" headerClass="centertext">
+                    <apex:outputText value="{0}" style="text-align:center;">
+                        <apex:param value="{!rowNumber+1}"/>
+                    </apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Name">
+                    <apex:inputField value="{!emp.Name}"/>
+                </apex:column>
+                <apex:column headerValue="Salary">
+                    <apex:inputField value="{!emp.salary__c}"/>
+                </apex:column>
+                    <apex:column headerValue="Contact Number">
+                    <apex:inputField value="{!emp.contact_number__c}"/>
+                </apex:column>
+                    <apex:column headerValue="Department">
+                    <apex:inputField value="{!emp.Department__c}"/>
+                </apex:column>
+                <apex:column headerValue="Action">
+                    <apex:commandButton value="Delete" action="{!deleteRow}" reRender="pb">
+                        <apex:param name="rowIndex" value="{!rowNumber}"/>
+                    </apex:commandButton>
+                    <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+<apex:commandButton action="{!addRow}" value="Add Employee" reRender="pb"/>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

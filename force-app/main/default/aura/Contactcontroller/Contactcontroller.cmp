@@ -1,0 +1,65 @@
+<aura:component controller="Contactcontroller" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="contacts" type="Object[]" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="newContact" type="Contact" default="{'sobjectType':'Contact', 'FirstName': '', 'LastName': '', 'Email': '', 'Phone': ''}" />
+    <aura:attribute name="showcontact" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <lightning:button label="New Contact" onclick="{!c.showNewContactForm}" />
+        <aura:attribute name="draftValues" type="Object" />
+<aura:attribute name="availableAccounts" type="Object[]" />
+    <aura:attribute name="selectedAccountId" type="String" />
+    
+        <aura:attribute name="accountId" type="String" />
+
+
+    
+    
+    
+    
+    <aura:if isTrue="{!v.showcontact}">
+ <div>
+    <lightning:input label="First Name" type="text" aura:id="fname" value="{!v.newContact.FirstName}" />
+    <lightning:input label="Last Name" type="text" aura:id="lname" value="{!v.newContact.LastName}" />
+    <lightning:input label="Email" type="text" aura:id="email" value="{!v.newContact.Email}" />
+    <lightning:input label="Phone" type="text" aura:id="phone" value="{!v.newContact.Phone}" />
+    <lightning:select label="Account Name" aura:id="accountSelect" value="{!v.selectedAccountId}">
+        <option value="">--Select Account--</option>
+        <aura:iteration items="{!v.availableAccounts}" var="account">
+            <option value="{!account.Id}">{!account.Name}</option>
+        </aura:iteration>
+    </lightning:select>
+    <lightning:button label="Create" onclick="{!c.createContact}" />
+</div>
+    </aura:if>
+                    <lightning:button label="Delete" name="delete" title="Delete" onclick="{!c.deleteContact}" />
+
+    <div style="height: 300px">
+        <lightning:datatable
+            columns="{!v.columns}"
+            data="{!v.contacts}"
+            keyField="Id"
+            hideCheckboxColumn="false"
+          onsave="{!c.handleSave}" 
+            draftValues="{!v.draftValues}"
+                             onrowaction="{!c.handleRowAction}"
+                                 aura:id="contactDataTable">
+
+
+            </lightning:datatable>
+                            
+          
+    </div>
+    
+    
+    
+   
+
+
+
+    
+    
+    
+    
+    
+    
+  </aura:component>

@@ -1,0 +1,25 @@
+<apex:page docType="html">
+    <html>
+        <body>
+ <h1 style ="font-size:20px; color:blue; text-align:center;">ifelse statement</h1>
+ <input type="number" id="input" style ="font-size:16px;"/>
+ <button type="button" onclick="checkNumber()" style="color:red; font-size:20px;">Enternum</button>
+ <p id="result"></p>
+
+  <script>
+  function checkNumber() {
+  var value = parseInt(document.getElementById("input").value);
+  var result = document.getElementById("result");
+
+  if (value < 5) {
+  result.textContent = "good";
+  } else if (value > 5) {
+ result.textContent = "bad";
+  } else if (value === 5) {
+  result.textContent = "poor";
+       }
+                }
+  </script>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,41 @@
+<apex:page controller="Acccondetails">
+    <apex:form id="mainForm">
+
+        <apex:pageBlock title="Account Selection">
+            
+             <apex:pageBlockTable value="{!wrapAccountList}" var="wrap">
+                <apex:column >
+                    <apex:inputCheckbox value="{!wrap.isSelected}" />
+                </apex:column>
+                <apex:column value="{!wrap.accn.Name}" />
+            </apex:pageBlockTable>
+                     
+                    <apex:pageBlockButtons location="Bottom">
+
+                       <div style="width:600px; text-align:center;">
+
+            <apex:commandButton value="Select Accounts" action="{!selectAccount}" rerender="selectedAccountsList" />
+            </div>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+           
+        
+        <apex:outputPanel id="selectedAccountsList">
+            <apex:pageBlock title="Selected Accounts" rendered="{!NOT(ISNULL(selectedAccounts))}">
+                <apex:pageBlockTable value="{!selectedAccounts}" var="selected">
+                    <apex:column value="{!selected.Name}" />
+                    <apex:column value="{!selected.BillingCity}" />
+                    <apex:column value="{!selected.Phone}" />
+                </apex:pageBlockTable>
+                
+                <apex:pageBlock title="Associated Contacts">
+                    <apex:pageBlockTable value="{!selectedContacts}" var="contact">
+                        <apex:column value="{!contact.FirstName}" />
+                        <apex:column value="{!contact.LastName}" />
+                        <apex:column value="{!contact.Email}" />
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

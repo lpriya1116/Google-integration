@@ -1,0 +1,15 @@
+<apex:page standardcontroller="Employee__c" extensions="Displayemployees">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:outputText value="Employee Name: {!Employee__c.Name}"/>
+                 <apex:selectList value="{!selectedEmployeeId}" size="1">
+                    <apex:selectOptions value="{!Employees}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!URLFOR('/apex/EmployeedetailPage1', null, [id=selectedEmployeeId])}" value="Show Details"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

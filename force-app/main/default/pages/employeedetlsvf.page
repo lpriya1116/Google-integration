@@ -1,0 +1,10 @@
+<apex:page >
+    <c:employeeDtls var="a">
+     <apex:panelGrid columns="2" border="1">
+      <apex:outputText value="{!a.Name}"/>
+     <apex:panelGroup >
+ <apex:outputText value="{!a.salary__c}, {!a.contact_number__c}"/>
+                    </apex:panelGroup>
+        </apex:panelGrid>
+    </c:employeeDtls>
+</apex:page>
